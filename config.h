@@ -60,3 +60,7 @@
 // https://beta.docs.qmk.fm/using-qmk/software-features/feature_tap_dance
 // https://beta.docs.qmk.fm/using-qmk/software-features/feature_combo
 // #define COMBO_COUNT 2
+
+// #define PERMISSIVE_HOLD
+#define TAPPING_TERM 130
+#define IGNORE_MOD_TAP_INTERRUPT
