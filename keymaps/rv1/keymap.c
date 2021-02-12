@@ -45,6 +45,15 @@ enum custom_keycodes {
 #define R_7 KC_7
 #define R_8 KC_8
 
+// https://beta.docs.qmk.fm/using-qmk/simple-keycodes/keycodes_basic#punctuation
+#define R_PARO LSFT(KC_9)      // (
+#define R_PARC LSFT(KC_0)      // (
+#define R_BRAO LSFT(KC_RBRC)   // [
+#define R_BRAC LSFT(KC_LBRC)   // ]
+#define R_CURO KC_RBRC         // {
+#define R_CURC KC_LBRC         // }
+#define R_PLUS LSFT(KC_EQUAL)  // +
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -55,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		LOWER,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
 		KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
                           KC_LEFT, KC_RGHT, R_T3,                          R_T4,    KC_UP,   KC_DOWN,
-                          KC_1,    KC_LWIN, KC_3,    R_4,         MOVE,   KC_6,    KC_7,    KC_8),
+                          KC_1,    KC_LWIN, KC_3,    R_4,         MOVE,    KC_6,    KC_7,    KC_8),
 
     [_COLEMAK] = KEYMAP(
      // _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
@@ -64,13 +73,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		LOWER,   KC_A,    KC_R,    KC_S,    KC_T,    KC_D,        KC_H,    KC_N,    KC_E,    KC_I,    KC_O,     KC_GRV,
 		KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_BSLS,
                           KC_LEFT, KC_RGHT, R_T3,                          R_T4,    KC_UP,   KC_DOWN,
-                          KC_1,    KC_LWIN, KC_3,    R_4,         MOVE,   KC_6,    KC_7,    KC_8),
+                          KC_1,    KC_LWIN, KC_3,    R_4,         MOVE,    KC_6,    KC_7,    KC_8),
 
 	[_LOWER]=KEYMAP(
 		_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
-		_______, _______, A_E1,    A_E2,    A_E3,    A_E4,        _______, KC_7,    KC_8,    KC_9,    _______, _______,
-		_______, _______, _______, _______, NUMBERS, _______,     _______, KC_4,    KC_5,    KC_6,    _______, _______,
-		_______, _______, _______, _______, _______, _______,     _______, KC_1,    KC_2,    KC_3,    _______, _______,
+		_______, _______, A_E1,    A_E2,    A_E3,    A_E4,        _______, R_PARC,  R_BRAC,  R_CURC,  _______, _______,
+		_______, _______, _______, _______, NUMBERS, _______,     _______, R_PARO,  R_BRAO,  R_CURO,  _______, _______,
+		_______, _______, _______, _______, _______, _______,     R_PLUS,  KC_EQL,  KC_QUOT, _______, _______, _______,
 		                  _______, _______, _______,                       _______, _______, _______,
 		                  KC_1,    KC_2,    KC_3,    KC_4,        KC_5,    KC_6,    COLEMAK, QWERTY),
 
