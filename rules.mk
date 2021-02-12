@@ -54,3 +54,7 @@ NKRO_ENABLE ?= yes		# USB Nkey Rollover - if this doesn't work, see here: https:
 BACKLIGHT_ENABLE ?= no  # Enable keyboard backlight functionality
 AUDIO_ENABLE ?= no
 RGBLIGHT_ENABLE ?= no
+
+# https://beta.docs.qmk.fm/using-qmk/software-features/feature_tap_dance
+# https://beta.docs.qmk.fm/using-qmk/software-features/feature_combo
+# COMBO_ENABLE = yes

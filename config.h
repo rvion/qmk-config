@@ -56,3 +56,7 @@
 #endif
 
 #endif
+
+// https://beta.docs.qmk.fm/using-qmk/software-features/feature_tap_dance
+// https://beta.docs.qmk.fm/using-qmk/software-features/feature_combo
+// #define COMBO_COUNT 2

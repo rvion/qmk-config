@@ -125,6 +125,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
+// https://beta.docs.qmk.fm/using-qmk/software-features/feature_combo
+// enum combos {
+//   AB_ESC,
+//   JK_TAB
+// };
+
+// const uint16_t PROGMEM ab_combo[] = {KC_A, KC_B, COMBO_END};
+// const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
+
+// combo_t key_combos[COMBO_COUNT] = {
+//   [AB_ESC] = COMBO(ab_combo, KC_ESC),
+//   [JK_TAB] = COMBO(jk_combo, KC_TAB)
+// };
+
+
 // UNUSED
 void led_set_user(uint8_t usb_led) {
 	if (usb_led & (1 << USB_LED_NUM_LOCK)) { } else { }
