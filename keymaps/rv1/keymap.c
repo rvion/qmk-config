@@ -29,47 +29,56 @@ enum custom_keycodes {
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
 
-// https://beta.docs.qmk.fm/using-qmk/advanced-keycodes/mod_tap
+#define R_T3 MT(MOD_LCTL, KC_ENTER)
+#define R_T4 MT(MOD_LSFT, KC_SPACE)
 
-// KC_LALT, KC_RGUI, KC_SPC,                       KC_UP,   KC_RBRC, KC_RALT,
-//   MO(1), KC_LSFT, KC_LCTL, KC_ENT,     KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT),
+#define R_1 KC_1;
+#define R_2 KC_2
+#define R_3 KC_3
+#define R_4 LT(_LOWER, KC_BSPACE)
+
+#define R_5 RAISE
+#define R_6 KC_6
+#define R_7 KC_7
+#define R_8 KC_8
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_QWERTY]=KEYMAP(
-		KC_ESC,  KC_1, KC_2, KC_3, KC_4, KC_5,           KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSPC,
-		KC_TAB,  KC_Q, KC_W, KC_E, KC_R, KC_T,           KC_Y, KC_U, KC_I, KC_O, KC_P, KC_DEL,
-		LOWER,   KC_A, KC_S, KC_D, KC_F, KC_G,           KC_H, KC_J, KC_K, KC_L, KC_COMM, KC_GRV,
-		KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B,           KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_BSLS,
-
-        KC_LEFT, KC_RIGHT,  MT(MOD_LCTL, KC_ENTER),       MT(MOD_LSFT, KC_SPACE), KC_UP, KC_DOWN,
-        KC_1,    KC_LWIN,   KC_3, LT(_LOWER, KC_BSPACE),  RAISE, KC_6, KC_7, KC_8),
+     // _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
+		KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
+		KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
+		LOWER,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+		KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+                          KC_LEFT, KC_RGHT, R_T3,                          R_T4,    KC_UP,   KC_DOWN,
+                          KC_1,    KC_LWIN, KC_3,    R_4,         RAISE,   KC_6,    KC_7,    KC_8),
 
     [_COLEMAK] = KEYMAP(
-		KC_ESC,  KC_1, KC_2, KC_3, KC_4, KC_5,        KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSPC,
-		KC_TAB,  KC_Q, KC_W, KC_F, KC_P, KC_G,        KC_J, KC_L, KC_U, KC_Y, KC_SCLN, KC_DEL,
-		LOWER,   KC_A, KC_R, KC_S, KC_T, KC_D,        KC_H, KC_N, KC_E, KC_I, KC_O, KC_GRV,
-		KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B,        KC_K, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_BSLS,
-
-        KC_LEFT, KC_RIGHT,  MT(MOD_LCTL, KC_ENTER),       MT(MOD_LSFT, KC_SPACE), KC_UP, KC_DOWN,
-        KC_1,    KC_LWIN,   KC_3, LT(_LOWER, KC_BSPACE),  RAISE, KC_6, KC_7, KC_8),
+     // _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
+		KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     KC_BSPC,
+		KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,  KC_DEL,
+		LOWER,   KC_A,    KC_R,    KC_S,    KC_T,    KC_D,        KC_H,    KC_N,    KC_E,    KC_I,    KC_O,     KC_GRV,
+		KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_BSLS,
+                          KC_LEFT, KC_RGHT, R_T3,                          R_T4,    KC_UP,   KC_DOWN,
+                          KC_1,    KC_LWIN, KC_3,    R_4,         RAISE,   KC_6,    KC_7,    KC_8),
 
 	[_LOWER]=KEYMAP(
-		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RESET,
-		KC_TRNS, KC_TRNS, A_E1,    A_E2,    A_E3,    A_E4,        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-		KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS,     KC_TRNS, KC_TRNS,
+		_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
+		_______, _______, A_E1,    A_E2,    A_E3,    A_E4,        _______, KC_7,    KC_8,    KC_9,    _______, _______,
+		_______, _______, _______, _______, _______, _______,     _______, KC_4,    KC_5,    KC_6,    _______, _______,
+		_______, _______, _______, _______, _______, _______,     _______, KC_1,    KC_2,    KC_3,    _______, _______,
+		_______, _______, _______,                   _______,     _______, _______,
 		KC_1, KC_2, KC_3, KC_4,                                   KC_5, KC_6, COLEMAK, QWERTY),
 
 	[_RAISE]=KEYMAP(
-		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_UP, KC_TRNS, KC_TRNS, KC_TRNS,
-		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_DOWN, KC_TRNS, KC_TRNS, KC_TRNS,
-		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-		KC_TRNS, KC_TRNS, KC_TRNS,                                KC_TRNS, KC_TRNS, KC_TRNS,
-		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
+     // -------, -------, -------, -------, -------, -------,     -------, -------, -------, -------, -------, -------,
+		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
+		_______, _______, _______, _______, _______, _______,     KC_HOME, KC_PGUP, KC_UP, KC_PGDN, _______, _______,
+		_______, _______, _______, _______, _______, _______,     KC_END, KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______,
+		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
+		_______, _______, _______,                                _______, _______, _______,
+		_______, _______, _______, _______,                       _______, _______, _______, _______)
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
@@ -123,3 +132,9 @@ void led_set_user(uint8_t usb_led) {
 // 	KC_LCTL, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_BSLS,
 // 	KC_LALT, KC_RGUI, KC_SPC,                               KC_UP, KC_RBRC, KC_RALT,
 // 	MO(1), KC_LSFT, KC_LCTL, KC_ENT,             KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT),
+
+
+// https://beta.docs.qmk.fm/using-qmk/advanced-keycodes/mod_tap
+
+// KC_LALT, KC_RGUI, KC_SPC,                       KC_UP,   KC_RBRC, KC_RALT,
+//   MO(1), KC_LSFT, KC_LCTL, KC_ENT,     KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT),
