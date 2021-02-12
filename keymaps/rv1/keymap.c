@@ -1,5 +1,13 @@
 #include "kb.h"
 
+// TODO: I can't leave delete as-is
+// mod tap is also quite bad so far
+
+// https://docs.qmk.fm/#/tap_hold?id=ignore-mod-tap-interrupt
+// reduce TAPPING_TERM  ?
+// #define IGNORE_MOD_TAP_INTERRUPT ?
+// #define PERMISSIVE_HOLD
+
 // avant derniere ligne
 // 1 2 3         4 5 6
 // dernière ligne
@@ -93,9 +101,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_MOVE]=KEYMAP(
 		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
-		_______, _______, _______, _______, _______, _______,     _______, KC_PGUP, KC_UP,   KC_PGDN, _______, _______,
-		_______, _______, _______, KC_LCTL, KC_LSFT, _______,     _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
 		_______, _______, _______, _______, _______, _______,     _______, KC_HOME, _______, KC_END,  _______, _______,
+		_______, _______, _______, KC_LCTL, KC_LSFT, _______,     _______, KC_PGUP, KC_UP,   KC_PGDN, _______, _______,
+		_______, _______, _______, _______, _______, _______,     _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
 		                  _______, _______, _______,                       _______, _______, _______,
 		                  _______, _______, _______, _______,     _______, _______, _______, _______)
 };
