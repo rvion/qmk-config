@@ -1,9 +1,5 @@
 #include "kb.h"
 
-// 1 2 3         4 5 6  // L5
-//       3 1   8 6      // L6 (1/2)
-//       4 2   7 5      // L6 (2/2)
-
 enum unicode_names { SNEK, GREN, RED, ORNG, HND1, HND2, HND3 };
 const uint32_t PROGMEM unicode_map[] = {
     [SNEK] = 0x1F40D,  // 🐍 https://emojiguide.org/snake
@@ -51,15 +47,18 @@ enum custom_keycodes {
 #define NUMBERS MO(_NUMBERS)
 
 // THUMBS KEYS
+// 1 2 3         4 5 6  // L5
+//       4 2   8 5      // L6 (1/2)E
+//       3 1   7 6      // L6 (2/2)
 #define RV_TA MT(MOD_LCTL, KC_ENTER)
 #define RV_TB KC_SPC
 #define RV_T1 KC_LWIN
-#define RV_T2 MT(MOD_LSFT, KC_BSPACE)
-#define RV_T3 KC_LSFT | KC_LCTL
-#define RV_T4 SYMBOLS
+#define RV_T2 KC_LSFT                  // was: MT(MOD_LSFT, KC_BSPACE)
+#define RV_T3 LCTL(KC_LSFT)            // KC_LSFT | KC_LCTL
+#define RV_T4 LT(_SYMBOLS, KC_BSPACE)  // was: SYMBOLS
 #define RV_T5 MOVE
-#define RV_T6 KC_6
-#define RV_T7 KC_7
+#define RV_T6 KC_ALT
+#define RV_T7 KC_ESC
 #define RV_T8 KC_8
 // MT(MOD_LSFT, KC_SPACE)
 
