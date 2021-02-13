@@ -9,6 +9,7 @@ enum layer_number {
     _QWERTY = 0,
     _COLEMAK,
     _SYMBOLS,
+    _EMOJIS,
     _NUMBERS,
     _MOVE,
     _EMPTY
@@ -25,9 +26,19 @@ enum custom_keycodes {
     RV_E3,  // ê
     RV_E4   // ë
 
+    // emojis
+    // see: https://www.webnots.com/alt-code-shortcuts-for-hands-symbols/
+    RV_HND1,  // 👋 128075
+    RV_HND2,  // 👋 128076
+    RV_HND2,  // 👍 128077
+
+    RV_GOOD,  // 🟢 128994 // https://emojiguide.org/green-circle
+    RV_SOSO,  // 🟠 128992 // https://emojiguide.org/orange-circle
+    RV_BAD    // 🔴 128308 // https://emojiguide.org/red-circle
 };
 
 #define SYMBOLS MO(_SYMBOLS)
+#define EMOJIS MO(_EMOJIS)
 #define MOVE MO(_MOVE)
 #define NUMBERS MO(_NUMBERS)
 
@@ -77,10 +88,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_SYMBOLS]=KEYMAP(
 		_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
 		_______, _______, RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, RV_PARC, RV_BRAO, RV_CURO, _______, _______,
-		_______, _______, _______, _______, NUMBERS, _______,     KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, _______, _______,
+		_______, _______, _______, EMOJIS,  NUMBERS, _______,     KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, _______, _______,
 		_______, _______, _______, _______, _______, _______,     RV_PLUS, KC_EQL,  KC_QUOT, KC_MINS, _______, _______,
 		                  _______, _______, _______,                       KC_LSFT, _______, _______,
 		                  _______, _______, _______, _______,     _______, _______, COLEMAK, QWERTY),
+
+	[_EMOJIS]=KEYMAP(
+		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
+		_______, _______, _______, _______, _______, _______,     _______, RV_HND1, RV_HND2, RV_HND2, _______, _______,
+		_______, _______, _______, _______, _______, _______,     _______, RV_GOOD, RV_SOSO, RV_BAD,  _______, _______,
+		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
+		                  _______, _______, _______,                       _______, _______, _______,
+		                  _______, _______, _______, _______,     _______, _______, _______, _______),
 
 	[_NUMBERS]=KEYMAP(
 		_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
