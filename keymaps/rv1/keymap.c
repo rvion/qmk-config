@@ -54,8 +54,8 @@ enum custom_keycodes {
 #define RV_T4 LT(_SYMBOLS, KC_BSPACE)  // was: SYMBOLS
 #define RV_T2 KC_LSFT                  // was: MT(MOD_LSFT, KC_BSPACE)
 
-#define RV_T3 LCTL(KC_LSFT)  // KC_LSFT | KC_LCTL
-#define RV_T1 KC_LWIN
+#define RV_T3 KC_LWIN
+#define RV_T1 LCTL(KC_LSFT)  // KC_LSFT | KC_LCTL
 
 #define RV_TB KC_SPC
 #define RV_T5 MOVE
@@ -104,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		_______, RV_A1,   RV_A2,   EMOJIS,  NUMBERS, _______,     KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, _______, _______,
 		_______, _______, _______, RV_C1,   _______, _______,     RV_PLUS, KC_EQL,  KC_QUOT, KC_MINS, _______, _______,
 		                  _______, _______, _______,                       _______, _______, _______,
-		                  _______, _______, _______, _______,     KC_LSFT, _______, COLEMAK, QWERTY),
+		                  _______, _______, _______, _______,     LM(_SYMBOLS, MOD_LSFT), KC_LSFT, COLEMAK, QWERTY),
 
 	[_EMOJIS]=KEYMAP(
 		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
@@ -125,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_MOVE]=KEYMAP(
 		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
 		_______, _______, _______, _______, _______, _______,     _______, KC_PGUP, _______, KC_PGDN, _______, _______,
-		_______, _______, _______, KC_LCTL, KC_LSFT, _______,     RV_CLFT, KC_HOME, KC_UP,   KC_END,  RV_CRGT, _______,
+		_______, _______, _______, KC_LCTL, KC_LSFT, _______,     KC_HOME, RV_CLFT, KC_UP,   RV_CRGT, KC_END,  _______,
 		_______, _______, _______, _______, _______, _______,     _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
 		                  _______, _______, _______,                       _______, _______, _______,
 		                  _______, _______, _______, _______,     _______, _______, _______, _______),
