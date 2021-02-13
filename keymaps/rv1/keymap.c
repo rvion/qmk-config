@@ -4,12 +4,15 @@
 //       3 1   8 6      // L6 (1/2)
 //       4 2   7 5      // L6 (2/2)
 
-enum unicode_names { SNEK, GREN, RED, ORNG };
+enum unicode_names { SNEK, GREN, RED, ORNG, HND1, HND2, HND3 };
 const uint32_t PROGMEM unicode_map[] = {
-    [SNEK] = 0x1F40D,   // 🐍
-    [RED]  = 0x1F534,   // 🔴
-    [ORNG] = 0x128992,  // 🟠
-    [GREN] = 0x1F7E2    // 🟢
+    [SNEK] = 0x1F40D,  // 🐍 https://emojiguide.org/snake
+    [RED]  = 0x1F534,  // 🔴 https://emojiguide.org/red-circle
+    [ORNG] = 0x1F7E0,  // 🟠 https://emojiguide.org/orange-circle
+    [GREN] = 0x1F7E2,  // 🟢 https://emojiguide.org/green-circle
+    [HND1] = 0x1F44B,  // 👋 https://emojiguide.org/waving-hand
+    [HND2] = 0x1F44D,  // 👍 https://emojiguide.org/thumbs-up
+    [HND3] = 0x1F44C   // 👌 https://emojiguide.org/ok-hand
 };
 
 enum layer_number {
@@ -40,16 +43,6 @@ enum custom_keycodes {
     RV_A2,  // â 0226
 
     RV_C1,  // ç 0231
-
-    // emojis
-    // see: https://www.webnots.com/alt-code-shortcuts-for-hands-symbols/
-    RV_HND1,  // 👋 128075
-    RV_HND2,  // 👋 128076
-    RV_HND3,  // 👍 128077
-
-    RV_GOOD,  // 🟢 128994 // https://emojiguide.org/green-circle
-    RV_SOSO,  // 🟠 128992 // https://emojiguide.org/orange-circle
-    RV_BAD    // 🔴 128308 // https://emojiguide.org/red-circle
 };
 
 #define SYMBOLS MO(_SYMBOLS)
@@ -113,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_EMOJIS]=KEYMAP(
 		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
-		_______, _______, _______, _______, _______, _______,     _______, RV_HND1, RV_HND2, RV_HND3, _______, _______,
+		_______, _______, _______, _______, _______, _______,     _______, X(HND1), X(HND2), X(HND3), _______, _______,
 		_______, _______, _______, _______, _______, _______,     _______, X(GREN), X(ORNG), X(RED),  _______, _______,
 		_______, _______, _______, _______, _______, _______,     _______, X(SNEK), _______, _______, _______, _______,
 		                  _______, _______, _______,                       _______, _______, _______,
