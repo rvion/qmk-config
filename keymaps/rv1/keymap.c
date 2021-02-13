@@ -1,18 +1,8 @@
 #include "kb.h"
 
-// TODO: I can't leave delete as-is
-// mod tap is also quite bad so far
-
-// https://docs.qmk.fm/#/tap_hold?id=ignore-mod-tap-interrupt
-// reduce TAPPING_TERM  ?
-// #define IGNORE_MOD_TAP_INTERRUPT ?
-// #define PERMISSIVE_HOLD
-
-// avant derniere ligne
-// 1 2 3         4 5 6
-// dernière ligne
-//       4 2   7 5
-//       3 1   8 6
+// 1 2 3         4 5 6  // L5
+//       3 1   8 6      // L6 (1/2)
+//       4 2   7 5      // L6 (2/2)
 
 enum layer_number {
     //
@@ -142,6 +132,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
+// UNUSED
+void led_set_user(uint8_t usb_led) {
+    if (usb_led & (1 << USB_LED_NUM_LOCK)) { } else { }
+    if (usb_led & (1 << USB_LED_CAPS_LOCK)) { } else { }
+    if (usb_led & (1 << USB_LED_SCROLL_LOCK)) { } else { }
+    if (usb_led & (1 << USB_LED_COMPOSE)) { } else { }
+    if (usb_led & (1 << USB_LED_KANA)) { } else { }
+}
+
+
 // https://beta.docs.qmk.fm/using-qmk/software-features/feature_combo
 // enum combos {
 //   AB_ESC,
@@ -156,17 +156,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //   [JK_TAB] = COMBO(jk_combo, KC_TAB)
 // };
 
-
-// UNUSED
-void led_set_user(uint8_t usb_led) {
-	if (usb_led & (1 << USB_LED_NUM_LOCK)) { } else { }
-    if (usb_led & (1 << USB_LED_CAPS_LOCK)) { } else { }
-	if (usb_led & (1 << USB_LED_SCROLL_LOCK)) { } else { }
-	if (usb_led & (1 << USB_LED_COMPOSE)) { } else { }
-	if (usb_led & (1 << USB_LED_KANA)) { } else { }
-}
-
-
 // KEYMAP(
 // 	KC_ESC,  KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8,    KC_9,   KC_0,    KC_BSPC,
 // 	KC_TAB,  KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I,    KC_O,   KC_P,    KC_DEL,
@@ -180,3 +169,12 @@ void led_set_user(uint8_t usb_led) {
 
 // KC_LALT, KC_RGUI, KC_SPC,                       KC_UP,   KC_RBRC, KC_RALT,
 //   MO(1), KC_LSFT, KC_LCTL, KC_ENT,     KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT),
+
+// TODO: I can't leave delete as-is
+// mod tap is also quite bad so far
+
+// Notes
+// https://docs.qmk.fm/#/tap_hold?id=ignore-mod-tap-interrupt
+// reduce TAPPING_TERM  ?
+// #define IGNORE_MOD_TAP_INTERRUPT ?
+// #define PERMISSIVE_HOLD
