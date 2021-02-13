@@ -21,10 +21,15 @@ enum custom_keycodes {
     QWERTY = SAFE_RANGE,
     COLEMAK,
 
-    RV_E1,  // è
-    RV_E2,  // é
-    RV_E3,  // ê
-    RV_E4   // ë
+    // ALT CODES on windows
+    // see https://sites.psu.edu/symbolcodes/windows/codealt/
+    RV_E1,  // è 0232
+    RV_E2,  // é 0233
+    RV_E3,  // ê 0234
+    RV_E4,  // ë 0235
+
+    RV_A1,  // à 0224
+    RV_A2,  // â 0226
 
     // emojis
     // see: https://www.webnots.com/alt-code-shortcuts-for-hands-symbols/
@@ -88,8 +93,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_SYMBOLS]=KEYMAP(
 		_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
 		_______, _______, RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, RV_PARC, RV_BRAO, RV_CURO, _______, _______,
-		_______, _______, _______, EMOJIS,  NUMBERS, _______,     KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, _______, _______,
 		_______, _______, _______, _______, _______, _______,     RV_PLUS, KC_EQL,  KC_QUOT, KC_MINS, _______, _______,
+		_______, RV_A1,   RV_A2,   EMOJIS,  NUMBERS, _______,     KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, _______, _______,
 		                  _______, _______, _______,                       KC_LSFT, _______, _______,
 		                  _______, _______, _______, _______,     _______, _______, COLEMAK, QWERTY),
 
