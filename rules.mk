@@ -58,3 +58,11 @@ RGBLIGHT_ENABLE ?= no
 # https://beta.docs.qmk.fm/using-qmk/software-features/feature_tap_dance
 # https://beta.docs.qmk.fm/using-qmk/software-features/feature_combo
 # COMBO_ENABLE = yes
+
+
+# UNICODES:
+# https://docs.qmk.fm/#/feature_unicode
+#
+# UNICODE_ENABLE = yes  # no support for emoji
+UNICODEMAP_ENABLE = yes # supports emoji
+# UCIS_ENABLE = yes     # seems more complex
