@@ -54,9 +54,9 @@ enum custom_keycodes {
 #define RV_TA MT(MOD_LCTL, KC_ENTER)
 #define RV_TB KC_SPC
 #define RV_T1 KC_LWIN
-#define RV_T2 KC_LSFT
+#define RV_T2 MT(MOD_LSFT, KC_BSPACE)
 #define RV_T3 KC_LSFT | KC_LCTL
-#define RV_T4 LT(_SYMBOLS, KC_BSPACE)
+#define RV_T4 SYMBOLS
 #define RV_T5 MOVE
 #define RV_T6 KC_6
 #define RV_T7 KC_7
