@@ -50,18 +50,18 @@ enum custom_keycodes {
 #define MOVE MO(_MOVE)
 #define NUMBERS MO(_NUMBERS)
 
-#define RV_T3 MT(MOD_LCTL, KC_ENTER)
-#define RV_T4 KC_SPC
+// THUMBS KEYS
+#define RV_TA MT(MOD_LCTL, KC_ENTER)
+#define RV_TB KC_SPC
+#define RV_T1 KC_LWIN
+#define RV_T2 KC_LSFT
+#define RV_T3 KC_LSFT | KC_LCTL
+#define RV_T4 LT(_SYMBOLS, KC_BSPACE)
+#define RV_T5 MOVE
+#define RV_T6 KC_6
+#define RV_T7 KC_7
+#define RV_T8 KC_8
 // MT(MOD_LSFT, KC_SPACE)
-
-#define RV_1 KC_LWIN
-#define RV_2 KC_LSFT
-#define RV_3 KC_3
-#define RV_4 LT(_SYMBOLS, KC_BSPACE)
-#define RV_5 MOVE
-#define RV_6 KC_6
-#define RV_7 KC_7
-#define RV_8 KC_8
 
 #define RV_CLFT LCTL(KC_LEFT)
 #define RV_CRGT LCTL(KC_RIGHT)
@@ -84,8 +84,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
 		SYMBOLS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
 		KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-                          KC_LEFT, KC_RGHT, RV_T3,                         RV_T4,   KC_UP,   KC_DOWN,
-                          RV_1,    RV_2,    RV_3,    RV_4,        RV_5,    RV_6,    RV_7,    RV_8),
+                          KC_LEFT, KC_RGHT, RV_TA,                         RV_TB,   KC_UP,   KC_DOWN,
+                          RV_T1,   RV_T2,   RV_T3,   RV_T4,       RV_T5,   RV_T6,   RV_T7,   RV_T8),
 
     [_COLEMAK] = KEYMAP(
      // _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
@@ -93,8 +93,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,  KC_DEL,
 		SYMBOLS, KC_A,    KC_R,    KC_S,    KC_T,    KC_D,        KC_H,    KC_N,    KC_E,    KC_I,    KC_O,     KC_GRV,
 		KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_BSLS,
-                          KC_LEFT, KC_RGHT, RV_T3,                         RV_T4,   KC_UP,   KC_DOWN,
-                          RV_1,    RV_2,    RV_3,    RV_4,        RV_5,    RV_6,    RV_7,    RV_8),
+                          KC_LEFT, KC_RGHT, RV_TA,                         RV_TB,  KC_UP,   KC_DOWN,
+                          RV_T1,   RV_T2,   RV_T3,   RV_T4,       RV_T5,   RV_T6,   RV_T7,   RV_T8),
 
 	[_SYMBOLS]=KEYMAP(
 		_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
