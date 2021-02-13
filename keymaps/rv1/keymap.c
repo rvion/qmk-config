@@ -43,7 +43,7 @@ enum custom_keycodes {
 #define R_T4 KC_SPC
 // MT(MOD_LSFT, KC_SPACE)
 
-#define R_1 KC_LWIN;
+#define R_1 KC_LWIN
 #define R_2 KC_LSFT
 #define R_3 KC_3
 #define R_4 LT(_LOWER, KC_BSPACE)
