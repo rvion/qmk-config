@@ -43,11 +43,10 @@ enum custom_keycodes {
 #define R_T4 KC_SPC
 // MT(MOD_LSFT, KC_SPACE)
 
-#define R_1 KC_1;
-#define R_2 KC_2
+#define R_1 KC_LWIN;
+#define R_2 KC_LSFT
 #define R_3 KC_3
 #define R_4 LT(_LOWER, KC_BSPACE)
-
 #define R_5 MOVE
 #define R_6 KC_6
 #define R_7 KC_7
@@ -72,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		LOWER,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
 		KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
                           KC_LEFT, KC_RGHT, R_T3,                          R_T4,    KC_UP,   KC_DOWN,
-                          KC_LWIN, KC_LSFT, KC_3,    R_4,         MOVE,    KC_6,    KC_7,    KC_8),
+                          R_1,     R_2,     R_3,     R_4,         R_5,     R_6,     R_7,     R_8) ,
 
     [_COLEMAK] = KEYMAP(
      // _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
@@ -81,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		LOWER,   KC_A,    KC_R,    KC_S,    KC_T,    KC_D,        KC_H,    KC_N,    KC_E,    KC_I,    KC_O,     KC_GRV,
 		KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_BSLS,
                           KC_LEFT, KC_RGHT, R_T3,                          R_T4,    KC_UP,   KC_DOWN,
-                          KC_LWIN, KC_LSFT, KC_3,    R_4,         MOVE,    KC_6,    KC_7,    KC_8),
+                          R_1,     R_2,     R_3,     R_4,         R_5,     R_6,     R_7,     R_8) ,
 
 	[_LOWER]=KEYMAP(
 		_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
