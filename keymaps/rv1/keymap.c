@@ -8,7 +8,7 @@ enum layer_number {
     //
     _QWERTY = 0,
     _COLEMAK,
-    _LOWER,
+    _SYMBOLS,
     _NUMBERS,
     _MOVE,
     // _ADJUST
@@ -26,7 +26,7 @@ enum custom_keycodes {
 
 };
 
-#define LOWER MO(_LOWER)
+#define SYMBOLS MO(_SYMBOLS)
 #define MOVE MO(_MOVE)
 #define NUMBERS MO(_NUMBERS)
 
@@ -37,7 +37,7 @@ enum custom_keycodes {
 #define RV_1 KC_LWIN
 #define RV_2 KC_LSFT
 #define RV_3 KC_3
-#define RV_4 LT(_LOWER, KC_BSPACE)
+#define RV_4 LT(_SYMBOLS, KC_BSPACE)
 #define RV_5 MOVE
 #define RV_6 KC_6
 #define RV_7 KC_7
@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      // _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
 		KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
 		KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
-		LOWER,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+		SYMBOLS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
 		KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
                           KC_LEFT, KC_RGHT, RV_T3,                         RV_T4,   KC_UP,   KC_DOWN,
                           RV_1,    RV_2,    RV_3,    RV_4,        RV_5,    RV_6,    RV_7,    RV_8),
@@ -68,12 +68,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      // _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
 		KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     KC_BSPC,
 		KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,  KC_DEL,
-		LOWER,   KC_A,    KC_R,    KC_S,    KC_T,    KC_D,        KC_H,    KC_N,    KC_E,    KC_I,    KC_O,     KC_GRV,
+		SYMBOLS, KC_A,    KC_R,    KC_S,    KC_T,    KC_D,        KC_H,    KC_N,    KC_E,    KC_I,    KC_O,     KC_GRV,
 		KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_BSLS,
                           KC_LEFT, KC_RGHT, RV_T3,                         RV_T4,   KC_UP,   KC_DOWN,
                           RV_1,    RV_2,    RV_3,    RV_4,        RV_5,    RV_6,    RV_7,    RV_8),
 
-	[_LOWER]=KEYMAP(
+	[_SYMBOLS]=KEYMAP(
 		_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
 		_______, _______, RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, RV_PARC, RV_BRAO, RV_CURO, _______, _______,
 		_______, _______, _______, _______, NUMBERS, _______,     KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, _______, _______,
