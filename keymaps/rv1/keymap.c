@@ -47,18 +47,21 @@ enum custom_keycodes {
 #define NUMBERS MO(_NUMBERS)
 
 // THUMBS KEYS
-// 1 2 3         4 5 6  // L5
+// l r A         B u d  // L5
 //       4 2   8 5      // L6 (1/2)E
 //       3 1   7 6      // L6 (2/2)
 #define RV_TA MT(MOD_LCTL, KC_ENTER)
-#define RV_TB KC_SPC
-#define RV_T1 KC_LWIN
-#define RV_T2 KC_LSFT                  // was: MT(MOD_LSFT, KC_BSPACE)
-#define RV_T3 LCTL(KC_LSFT)            // KC_LSFT | KC_LCTL
 #define RV_T4 LT(_SYMBOLS, KC_BSPACE)  // was: SYMBOLS
+#define RV_T2 KC_LSFT                  // was: MT(MOD_LSFT, KC_BSPACE)
+
+#define RV_T3 LCTL(KC_LSFT)  // KC_LSFT | KC_LCTL
+#define RV_T1 KC_LWIN
+
+#define RV_TB KC_SPC
 #define RV_T5 MOVE
-#define RV_T6 KC_ALT
 #define RV_T7 KC_ESC
+
+#define RV_T6 KC_LALT
 #define RV_T8 KC_8
 // MT(MOD_LSFT, KC_SPACE)
 
