@@ -144,27 +144,34 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
 void matrix_init_user(void) { }
 void matrix_scan_user(void) { }
 
+#define X0 SS_TAP(X_KP_0)
+#define X1 SS_TAP(X_KP_1)
+#define X2 SS_TAP(X_KP_2)
+#define X3 SS_TAP(X_KP_3)
+#define X4 SS_TAP(X_KP_4)
+#define X5 SS_TAP(X_KP_5)
+#define X6 SS_TAP(X_KP_6)
+#define X7 SS_TAP(X_KP_7)
+#define X8 SS_TAP(X_KP_8)
+#define X9 SS_TAP(X_KP_9)
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case QWERTY:
-            if (record->event.pressed) { set_single_persistent_default_layer(_QWERTY); }
-            return false;
-        case COLEMAK:
-            if (record->event.pressed) { set_single_persistent_default_layer(_COLEMAK); }
-            return false;
-        case RV_E1:
-            if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_3) SS_TAP(X_KP_2))); }
-            return false;
-        case RV_E2:
-            if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_3) SS_TAP(X_KP_3))); }
-            return false;
-        case RV_E3:
-            if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_3) SS_TAP(X_KP_4))); }
-            return false;
-        case RV_E4:
-            if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_3) SS_TAP(X_KP_5))); }
-            return false;
-
+        case QWERTY: if (record->event.pressed) { set_single_persistent_default_layer(_QWERTY); } return false;
+        case COLEMAK: if (record->event.pressed) { set_single_persistent_default_layer(_COLEMAK); } return false;
+        case RV_E1: if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_3) SS_TAP(X_KP_2))); } return false;
+        case RV_E2: if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_3) SS_TAP(X_KP_3))); } return false;
+        case RV_E3: if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_3) SS_TAP(X_KP_4))); } return false;
+        case RV_E4: if (record->event.pressed) { SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_3) SS_TAP(X_KP_5))); } return false;
+        case RV_A1: if (record->event.pressed) { SEND_STRING(SS_LALT(X0 X2 X2 X4)); } return false;
+        case RV_A2: if (record->event.pressed) { SEND_STRING(SS_LALT(X0 X2 X2 X6)); } return false;
+        case RV_C1: if (record->event.pressed) { SEND_STRING(SS_LALT(X0 X2 X3 X1)); } return false;
+        case RV_HND1: if (record->event.pressed) { SEND_STRING(SS_LALT(X1 X2 X8 X0 X7 X5)); } return false;
+        case RV_HND2: if (record->event.pressed) { SEND_STRING(SS_LALT(X1 X2 X8 X0 X7 X6)); } return false;
+        case RV_HND3: if (record->event.pressed) { SEND_STRING(SS_LALT(X1 X2 X8 X0 X7 X7)); } return false;
+        case RV_GOOD: if (record->event.pressed) { SEND_STRING(SS_LALT(X1 X2 X8 X9 X9 X4)); } return false;
+        case RV_SOSO: if (record->event.pressed) { SEND_STRING(SS_LALT(X1 X2 X8 X9 X9 X2)); } return false;
+        case RV_BAD: if (record->event.pressed) { SEND_STRING( SS_LALT(X1 X2 X8 X3 X0 X8)); } return false;
     }
     return true;
 }
