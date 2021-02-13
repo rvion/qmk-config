@@ -62,6 +62,9 @@ enum custom_keycodes {
 #define RV_7 KC_7
 #define RV_8 KC_8
 
+#define RV_CLFT LCTL(KC_LEFT)
+#define RV_CRGT LCTL(KC_RIGHT)
+
 // https://beta.docs.qmk.fm/using-qmk/simple-keycodes/keycodes_basic#punctuation
 #define RV_PARO LSFT(KC_9)      // (
 #define RV_PARC LSFT(KC_0)      // (
@@ -118,8 +121,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_MOVE]=KEYMAP(
 		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
-		_______, _______, _______, _______, _______, _______,     _______, KC_PGUP, _______, KC_PGDN,  _______, _______,
-		_______, _______, _______, KC_LCTL, KC_LSFT, _______,     _______, KC_HOME, KC_UP,   KC_END, _______, _______,
+		_______, _______, _______, _______, _______, _______,     _______, KC_PGUP, _______, KC_PGDN, _______, _______,
+		_______, _______, _______, KC_LCTL, KC_LSFT, _______,     RV_CLFT, KC_HOME, KC_UP,   KC_END,  RV_CRGT, _______,
 		_______, _______, _______, _______, _______, _______,     _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
 		                  _______, _______, _______,                       _______, _______, _______,
 		                  _______, _______, _______, _______,     _______, _______, _______, _______),
