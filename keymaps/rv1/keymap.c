@@ -80,7 +80,7 @@ enum custom_keycodes {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-	[_QWERTY] = KEYMAP (
+	[_QWERTY] = KEYMAP(
 		KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
 		KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
 		SYMBOLS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT, KC_SCLN,
@@ -96,15 +96,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_LEFT, KC_RGHT, RV_TA,                         RV_TB,  KC_UP,   KC_DOWN,
                           RV_T1,   RV_T2,   RV_T3,   RV_T4,       RV_T5,   RV_T6,   RV_T7,   RV_T8),
 
-	[_SYMBOLS] = KEYMAP (
+	[_SYMBOLS] = KEYMAP(
 		_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
 		_______, _______, RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, RV_PARC, RV_BRAO, RV_CURO, _______, _______,
-		_______, RV_A1,   RV_A2,  _______,  KC_LGUI, _______,     KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, _______, _______,
+		_______, RV_A1,   RV_A2,  _______,  KC_APP,  _______,     KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, _______, _______,
 		_______, _______, _______, RV_C1,   _______, _______,     RV_PLUS, KC_EQL,  KC_QUOT, KC_MINS, _______, _______,
 		                  _______, _______, _______,                       _______, _______, _______,
 		                  _______, _______, _______, _______,     _______, KC_LSFT, COLEMAK, QWERTY),
 
-	[_EMOJIS] = KEYMAP (
+	[_EMOJIS] = KEYMAP(
 		_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
 		_______, X(HND1), KC_7,    KC_8,    KC_9,    X(GREN),     _______, KC_PGUP, KC_UP,   KC_PGDN, _______, _______,
 		_______, X(HND2), KC_4,    KC_5,    KC_6,    X(ORNG),     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  S(KC_7),
@@ -113,7 +113,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		                  _______, _______, _______, KC_LALT,     _______, _______, _______, _______),
 
     // in case I need to create additional layer, I can copy paste this:
-	[_EMPTY] = KEYMAP (
+	[_EMPTY] = KEYMAP(
 		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
 		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
 		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
