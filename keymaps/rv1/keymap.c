@@ -81,51 +81,53 @@ enum custom_keycodes {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-		KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
-		SYMBOLS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT, KC_SCLN,
-		KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+    [_QWERTY] = KEYMAP(
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
+        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
+        SYMBOLS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT, KC_SCLN,
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
                           KC_LEFT, KC_RGHT, RV_TA,                         RV_TB,   KC_UP,   KC_DOWN,
                           RV_T1,   RV_T2,   RV_T3,   RV_T4,       RV_T5,   RV_T6,   RV_T7,   RV_T8),
 
     [_COLEMAK] = KEYMAP(
-		KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     KC_MINS, // KC_BSPC,
-		KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,  KC_BSLS, // KC_DEL,
-		SYMBOLS, KC_A,    KC_R,    KC_S,    KC_T,    KC_D,        KC_H,    KC_N,    KC_E,    KC_I,    KC_O,     KC_SCLN, // KC_GRV,
-		KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_RSFT, // KC_BSLS,
-                          KC_LEFT, KC_RGHT, RV_TA,                         RV_TB,  KC_UP,   KC_DOWN,
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     KC_MINS, // KC_BSPC,
+        KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,  KC_BSLS, // KC_DEL,
+        SYMBOLS, KC_A,    KC_R,    KC_S,    KC_T,    KC_D,        KC_H,    KC_N,    KC_E,    KC_I,    KC_O,     KC_SCLN, // KC_GRV,
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_RSFT, // KC_BSLS,
+                          KC_LEFT, KC_RGHT, RV_TA,                         RV_TB,   KC_UP,   KC_DOWN,
                           RV_T1,   RV_T2,   RV_T3,   RV_T4,       RV_T5,   RV_T6,   RV_T7,   RV_T8),
 
-	[_SYMBOLS] = KEYMAP(
-		_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
-		_______, _______, RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, RV_PARC, RV_BRAO, RV_CURO, _______, _______,
-		_______, RV_A1,   RV_A2,   RV_ACPT, KC_APP,  _______,     KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, _______, _______,
-		_______, _______, _______, RV_C1,   _______, _______,     RV_PLUS, KC_EQL,  KC_QUOT, KC_MINS, _______, _______,
-		                  _______, _______, _______,                       _______, _______, _______,
-		                  _______, _______, _______, _______,     _______, KC_LSFT, COLEMAK, QWERTY),
+    [_SYMBOLS] = KEYMAP(
+        _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
+        _______, _______, RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, RV_PARC, RV_BRAO, RV_CURO, _______, _______,
+        _______, RV_A1,   RV_A2,   RV_ACPT, KC_APP,  _______,     KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, _______, _______,
+        _______, _______, _______, RV_C1,   _______, _______,     RV_PLUS, KC_EQL,  KC_QUOT, KC_MINS, _______, _______,
+                          _______, _______, _______,                       _______, _______, _______,
+                          _______, _______, _______, _______,     _______, KC_LSFT, COLEMAK, QWERTY),
 
-	[_EMOJIS] = KEYMAP(
-		_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
-		_______, _______, KC_PGUP, KC_UP,   KC_PGDN, _______,     X(HND1), KC_7,    KC_8,    KC_9,    X(GREN), _______,
-		_______, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,      X(HND2), KC_4,    KC_5,    KC_6,    X(ORNG), _______,
-		_______, _______, KC_TAB,  _______, _______, _______,     X(HND3), KC_1,    KC_2,    KC_3,    X(RED),  _______,
-		                  _______, _______, _______,                       _______, _______, _______,
-		                  _______, _______, _______, KC_LALT,     _______, _______, _______, _______),
+    [_EMOJIS] = KEYMAP(
+        _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
+        _______, _______, KC_PGUP, KC_UP,   KC_PGDN, _______,     X(HND1), KC_7,    KC_8,    KC_9,    X(GREN), _______,
+        _______, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,      X(HND2), KC_4,    KC_5,    KC_6,    X(ORNG), _______,
+        _______, _______, KC_TAB,  _______, _______, _______,     X(HND3), KC_1,    KC_2,    KC_3,    X(RED),  _______,
+                          _______, _______, _______,                       _______, _______, _______,
+                          _______, _______, _______, KC_LALT,     _______, _______, _______, _______),
 
     // in case I need to create additional layer, I can copy paste this:
-	[_EMPTY] = KEYMAP(
-		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
-		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
-		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
-		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
-		                  _______, _______, _______,                       _______, _______, _______,
-		                  _______, _______, _______, _______,     _______, _______, _______, _______)
+    [_EMPTY] = KEYMAP(
+        _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
+                          _______, _______, _______,                       _______, _______, _______,
+                          _______, _______, _______, _______,     _______, _______, _______, _______)
 
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
-	// keyevent_t event = record->event;
-	// switch (id) { }
-	return MACRO_NONE;
+    // keyevent_t event = record->event;
+    // switch (id) { }
+    return MACRO_NONE;
 }
 
 void matrix_init_user(void) { }
@@ -182,12 +184,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // };
 
 // KEYMAP(
-// 	KC_ESC,  KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8,    KC_9,   KC_0,    KC_BSPC,
-// 	KC_TAB,  KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I,    KC_O,   KC_P,    KC_DEL,
-// 	KC_LSFT, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K,    KC_L,   KC_COMM, KC_GRV,
-// 	KC_LCTL, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_BSLS,
-// 	KC_LALT, KC_RGUI, KC_SPC,                               KC_UP, KC_RBRC, KC_RALT,
-// 	MO(1), KC_LSFT, KC_LCTL, KC_ENT,             KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT),
+//     KC_ESC,  KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8,    KC_9,   KC_0,    KC_BSPC,
+//     KC_TAB,  KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I,    KC_O,   KC_P,    KC_DEL,
+//     KC_LSFT, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K,    KC_L,   KC_COMM, KC_GRV,
+//     KC_LCTL, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_BSLS,
+//     KC_LALT, KC_RGUI, KC_SPC,                               KC_UP, KC_RBRC, KC_RALT,
+//     MO(1), KC_LSFT, KC_LCTL, KC_ENT,             KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT),
 
 
 // https://beta.docs.qmk.fm/using-qmk/advanced-keycodes/mod_tap
