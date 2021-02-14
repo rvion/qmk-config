@@ -57,10 +57,10 @@ enum custom_keycodes {
 
 #define RV_TB KC_SPC
 #define RV_T5 EMOJIS
-#define RV_T7 KC_ESC
+#define RV_T7 LM(EMOJIS, MOD_LSFT)
 
 #define RV_T6 KC_LALT
-#define RV_T8 LM(EMOJIS, MOD_LSFT)
+#define RV_T8 KC_ESC
 // MT(MOD_LSFT, KC_SPACE)
 
 #define RV_CLFT LCTL(KC_LEFT)
