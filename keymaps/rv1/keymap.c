@@ -4,7 +4,7 @@ enum unicode_names { SNEK, GREN, RED, ORNG, HND1, HND2, HND3 };
 const uint32_t PROGMEM unicode_map[] = {
     [SNEK] = 0x1F40D,  // 🐍 https://emojiguide.org/snake
     [RED]  = 0x1F534,  // 🔴 https://emojiguide.org/red-circle
-    [ORNG] = 0x1F7E0,  // 🟠 https://emojiguide.org/orange-circle
+    [ORNG] = 0x1F536,  // 🔶 https://emojiguide.org/large-orange-diamond
     [GREN] = 0x1F7E2,  // 🟢 https://emojiguide.org/green-circle
     [HND1] = 0x1F44B,  // 👋 https://emojiguide.org/waving-hand
     [HND2] = 0x1F44D,  // 👍 https://emojiguide.org/thumbs-up
