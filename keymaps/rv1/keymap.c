@@ -17,8 +17,7 @@ enum layer_number {
     _COLEMAK,
     _SYMBOLS,
     _EMOJIS,
-    _NUMBERS,
-    _MOVE,
+    // _NUMBERS,
     _EMPTY
     // _ADJUST
 };
@@ -43,8 +42,7 @@ enum custom_keycodes {
 
 #define SYMBOLS MO(_SYMBOLS)
 #define EMOJIS MO(_EMOJIS)
-#define MOVE MO(_MOVE)
-#define NUMBERS MO(_NUMBERS)
+// #define NUMBERS MO(_NUMBERS)
 
 // THUMBS KEYS
 // l r A         B u d  // L5
@@ -58,11 +56,11 @@ enum custom_keycodes {
 #define RV_T1 LCTL(KC_LSFT)  // KC_LSFT | KC_LCTL
 
 #define RV_TB KC_SPC
-#define RV_T5 MOVE
-#define RV_T7 KC_ESC
+#define RV_T5 EMOJIS
+#define RV_T7 EMOJIS
 
 #define RV_T6 KC_LALT
-#define RV_T8 KC_8
+#define RV_T8 KC_ESC
 // MT(MOD_LSFT, KC_SPACE)
 
 #define RV_CLFT LCTL(KC_LEFT)
@@ -82,8 +80,7 @@ enum custom_keycodes {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-	[_QWERTY]=KEYMAP(
-     // _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
+	[_QWERTY] = KEYMAP (
 		KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
 		KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
 		SYMBOLS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT, KC_SCLN,
@@ -92,7 +89,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           RV_T1,   RV_T2,   RV_T3,   RV_T4,       RV_T5,   RV_T6,   RV_T7,   RV_T8),
 
     [_COLEMAK] = KEYMAP(
-     // _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
 		KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     KC_MINS, // KC_BSPC,
 		KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,  KC_BSLS, // KC_DEL,
 		SYMBOLS, KC_A,    KC_R,    KC_S,    KC_T,    KC_D,        KC_H,    KC_N,    KC_E,    KC_I,    KC_O,     KC_SCLN, // KC_GRV,
@@ -100,40 +96,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_LEFT, KC_RGHT, RV_TA,                         RV_TB,  KC_UP,   KC_DOWN,
                           RV_T1,   RV_T2,   RV_T3,   RV_T4,       RV_T5,   RV_T6,   RV_T7,   RV_T8),
 
-	[_SYMBOLS]=KEYMAP(
+	[_SYMBOLS] = KEYMAP (
 		_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
 		_______, _______, RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, RV_PARC, RV_BRAO, RV_CURO, _______, _______,
-		_______, RV_A1,   RV_A2,   EMOJIS,  NUMBERS, _______,     KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, _______, _______,
+		_______, RV_A1,   RV_A2,  _______,  KC_LGUI, _______,     KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, _______, _______,
 		_______, _______, _______, RV_C1,   _______, _______,     RV_PLUS, KC_EQL,  KC_QUOT, KC_MINS, _______, _______,
 		                  _______, _______, _______,                       _______, _______, _______,
-		                  _______, _______, _______, _______,     EMOJIS,  KC_LSFT, COLEMAK, QWERTY),
+		                  _______, _______, _______, _______,     _______, KC_LSFT, COLEMAK, QWERTY),
 
-	[_EMOJIS]=KEYMAP(
-		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
-		_______, _______, X(HND1), X(HND2), X(HND3), _______,     _______, X(GREN), X(ORNG), X(RED),  _______, _______,
-		_______, S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5),     S(KC_6), S(KC_7), S(KC_8), _______, S(KC_5), _______,
-		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
-		                  _______, _______, _______,                       _______, _______, _______,
-		                  _______, _______, _______, _______,     _______, _______, _______, _______),
-
-	[_NUMBERS]=KEYMAP(
+	[_EMOJIS] = KEYMAP (
 		_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
-		_______, _______, RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, KC_7,    KC_8,    KC_9,    _______, _______,
-		_______, _______, _______, _______, _______, _______,     _______, KC_4,    KC_5,    KC_6,    _______, _______,
-		_______, _______, _______, _______, _______, _______,     _______, KC_1,    KC_2,    KC_3,    _______, _______,
+		_______, X(HND1), KC_7,    KC_8,    KC_9,    X(GREN),     _______, KC_PGUP, KC_UP,   KC_PGDN, _______, _______,
+		_______, X(HND2), KC_4,    KC_5,    KC_6,    X(ORNG),     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  S(KC_7),
+		_______, X(HND3), KC_1,    KC_2,    KC_3,    X(RED),      _______, _______, _______, _______, _______, _______,
 		                  _______, _______, _______,                       _______, _______, _______,
-		                  _______, _______, _______, _______,     _______, _______, COLEMAK, QWERTY),
-
-	[_MOVE]=KEYMAP(
-		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
-		_______, _______, _______, _______, _______, _______,     _______, KC_PGUP, _______, KC_PGDN, _______, _______,
-		_______, _______, _______, KC_LCTL, KC_LSFT, _______,     KC_HOME, RV_CLFT, KC_UP,   RV_CRGT, KC_END,  _______,
-		_______, _______, _______, _______, _______, _______,     _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
-		                  _______, _______, _______,                       _______, _______, _______,
-		                  _______, _______, _______, EMOJIS,      _______, _______, _______, _______),
+		                  _______, _______, _______, KC_LALT,     _______, _______, _______, _______),
 
     // in case I need to create additional layer, I can copy paste this:
-	[_EMPTY]=KEYMAP(
+	[_EMPTY] = KEYMAP (
 		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
 		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
 		_______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,
