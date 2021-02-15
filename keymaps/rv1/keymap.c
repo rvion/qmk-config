@@ -83,9 +83,9 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_QWERTY] = KEYMAP(
-        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_SCLN,
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
-        SYMBOLS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT, KC_SCLN,
+        SYMBOLS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT, KC_MINS,
         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
                           KC_LEFT, KC_RGHT, RV_TA,                         RV_TB,   KC_UP,   KC_DOWN,
                           RV_T1,   RV_T2,   RV_T3,   RV_T4,       RV_T5,   RV_T6,   RV_T7,   RV_T8),
@@ -100,18 +100,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYMBOLS] = KEYMAP(
         _______, _______, _______, _______, _______, _______,     _______, _______, _______, KC_PSCR, _______, RESET,
-        _______, KC_APP,  RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, RV_PARC, RV_BRAO, RV_CURO, _______, _______,
-        _______, RV_A1,   RV_A2,   RV_ACPT, RV_QMRK, RV_BANG,     KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, KC_MINS, _______,
-        _______, _______, _______, RV_C1,   RV_COLN, _______,     RV_PLUS, KC_EQL,  KC_QUOT, KC_MINS, _______, _______,
-                          _______, _______, _______,                       _______, KC_DEL,  _______,
-                          _______, _______, _______, _______,     KC_LSFT, COLEMAK, KC_LCTL, QWERTY),
+        _______, KC_APP,  RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, RV_PARC, RV_CURO, RV_BRAO, _______, _______,
+        _______, RV_A1,   RV_A2,   RV_ACPT, RV_QMRK, RV_BANG,     KC_SLSH, RV_PARO, RV_CURC, RV_BRAC, KC_MINS, _______,
+        _______, _______, _______, RV_C1,   RV_COLN, KC_SCLN,     RV_PLUS, KC_EQL,  KC_QUOT, KC_MINS, _______, _______,
+                          _______, _______, _______,                       KC_LCTL, KC_BSPC, KC_DEL,
+                          _______, _______, _______, _______,     KC_LSFT, COLEMAK, _______, QWERTY),
 
     [_EMOJIS] = KEYMAP(
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
-        _______, _______, KC_PGUP, KC_UP,   KC_PGDN, _______,     KC_F10,  KC_7,    KC_8,    KC_9,    _______, X(ORNG),
-        _______, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,      KC_F11,  KC_4,    KC_5,    KC_6,    KC_DOT,  X(GREN),
-        _______, _______, KC_TAB,  _______, _______, _______,     KC_F12,  KC_1,    KC_2,    KC_3,    KC_DOT,  X(RED),
-                          _______, _______, _______,                       _______, KC_0,    KC_GRV,
+        _______, _______, KC_LEFT, KC_UP,   KC_RGHT, _______,     KC_F10,  KC_7,    KC_8,    KC_9,    _______, X(ORNG),
+        _______, _______, KC_PGUP, KC_DOWN, KC_PGDN, _______,     KC_F11,  KC_4,    KC_5,    KC_6,    KC_0,    X(GREN),
+        _______, _______, KC_HOME, _______, KC_END,  _______,     KC_F12,  KC_1,    KC_2,    KC_3,    KC_DOT,  X(RED),
+                          _______, _______, _______,                       _______, _______, KC_GRV,
                           _______, _______, _______, KC_LALT,     _______, _______, _______, _______),
 
     // in case I need to create additional layer, I can copy paste this:
