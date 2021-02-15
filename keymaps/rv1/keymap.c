@@ -76,7 +76,7 @@ enum custom_keycodes {
 #define RV_PLUS LSFT(KC_EQUAL)  // +
 #define RV_ACPT LCTL(KC_ENTER)  // accept(ctrl+enter)
 #define RV_QMRK LSFT(KC_SLSH)
-// #define RV_BANG LSFT(KC_1)   // !
+#define RV_BANG LSFT(KC_1)  // !
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -99,18 +99,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYMBOLS] = KEYMAP(
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
-        _______, _______, RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, RV_PARC, RV_BRAO, RV_CURO, _______, _______,
-        _______, RV_A1,   RV_A2,   RV_ACPT, RV_QMRK, KC_APP,      KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, KC_MINS, _______,
+        _______, KC_APP,  RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, RV_PARC, RV_BRAO, RV_CURO, _______, _______,
+        _______, RV_A1,   RV_A2,   RV_ACPT, RV_QMRK, KC_BANG,      KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, KC_MINS, _______,
         _______, _______, _______, RV_C1,   _______, _______,     RV_PLUS, KC_EQL,  KC_QUOT, KC_MINS, _______, _______,
-                          _______, _______, _______,                       _______, _______, _______,
-                          _______, _______, _______, _______,     _______, KC_LSFT, COLEMAK, QWERTY),
+                          _______, _______, _______,                       _______, KC_GRV,  _______,
+                          _______, _______, _______, _______,     _______, COLEMAK, KC_LSFT, QWERTY),
 
     [_EMOJIS] = KEYMAP(
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
         _______, _______, KC_PGUP, KC_UP,   KC_PGDN, _______,     X(HND1), KC_7,    KC_8,    KC_9,    X(GREN), X(ORNG),
         _______, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,      X(HND2), KC_4,    KC_5,    KC_6,    X(RED),  _______,
         _______, _______, KC_TAB,  _______, _______, _______,     X(HND3), KC_1,    KC_2,    KC_3,    KC_DOT,  _______,
-                          _______, _______, _______,                       _______, _______, _______,
+                          _______, _______, _______,                       _______, KC_0,    KC_GRV,
                           _______, _______, _______, KC_LALT,     _______, _______, _______, _______),
 
     // in case I need to create additional layer, I can copy paste this:
