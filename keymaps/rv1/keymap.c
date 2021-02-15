@@ -53,11 +53,12 @@ enum custom_keycodes {
 #define RV_T2 KC_LSFT                  // was: MT(MOD_LSFT, KC_BSPACE)
 
 #define RV_T3 KC_LWIN
-#define RV_T1 LCTL(KC_LSFT)  // KC_LSFT | KC_LCTL
+#define RV_T1 LCTL(KC_LSFT)    // KC_LSFT | KC_LCTL
+#define RV_YOLO LCTL(KC_LSFT)  // KC_LSFT | KC_LCTL
 
 #define RV_TB KC_SPC
-#define RV_T5 LT(EMOJIS, KC_TAB)
-#define RV_T7 LM(EMOJIS, MOD_LSFT)
+#define RV_T5 MT(MOD_LSFT, KC_TAB)  // LM(EMOJIS, MOD_LSFT)
+#define RV_T7 LT(EMOJIS, KC_ESC)
 
 #define RV_T6 KC_LALT
 #define RV_T8 KC_ESC
@@ -81,19 +82,18 @@ enum custom_keycodes {
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
     [_QWERTY] = KEYMAP(
-        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_SCLN,
+        KC_PLUS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_SCLN,
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
-        SYMBOLS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT, KC_MINS,
+        RV_YOLO, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT, KC_MINS,
         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
                           KC_LEFT, KC_RGHT, RV_TA,                         RV_TB,   KC_UP,   KC_DOWN,
                           RV_T1,   RV_T2,   RV_T3,   RV_T4,       RV_T5,   RV_T6,   RV_T7,   RV_T8),
 
     [_COLEMAK] = KEYMAP(
-        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     KC_MINS, // KC_BSPC,
+        KC_PLUS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     KC_MINS, // KC_BSPC,
         KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,  KC_BSLS, // KC_DEL,
-        SYMBOLS, KC_A,    KC_R,    KC_S,    KC_T,    KC_D,        KC_H,    KC_N,    KC_E,    KC_I,    KC_O,     KC_SCLN, // KC_GRV,
+        RV_YOLO, KC_A,    KC_R,    KC_S,    KC_T,    KC_D,        KC_H,    KC_N,    KC_E,    KC_I,    KC_O,     KC_SCLN, // KC_GRV,
         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,        KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_RSFT, // KC_BSLS,
                           KC_LEFT, KC_RGHT, RV_TA,                         RV_TB,   KC_UP,   KC_DOWN,
                           RV_T1,   RV_T2,   RV_T3,   RV_T4,       RV_T5,   RV_T6,   RV_T7,   RV_T8),
