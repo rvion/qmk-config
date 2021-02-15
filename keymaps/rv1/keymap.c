@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_APP,  RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, RV_PARC, RV_BRAO, RV_CURO, _______, _______,
         _______, RV_A1,   RV_A2,   RV_ACPT, RV_QMRK, RV_BANG,     KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, KC_MINS, _______,
         _______, _______, _______, RV_C1,   _______, _______,     RV_PLUS, KC_EQL,  KC_QUOT, KC_MINS, _______, _______,
-                          _______, _______, _______, _______,     _______, COLEMAK, KC_LSFT, QWERTY),
+                          _______, _______, _______,                       _______, KC_DEL,  _______,
                           _______, _______, _______, _______,     KC_LSFT, COLEMAK, KC_LSFT, QWERTY),
 
     [_EMOJIS] = KEYMAP(
