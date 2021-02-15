@@ -50,18 +50,18 @@ enum custom_keycodes {
 //       3 1   7 6      // L6 (2/2)
 #define RV_TA MT(MOD_LCTL, KC_ENTER)
 #define RV_T4 LT(_SYMBOLS, KC_BSPACE)  // was: SYMBOLS
-#define RV_T2 KC_LSFT                  // was: MT(MOD_LSFT, KC_BSPACE)
+#define RV_T2 MT(MOD_LSFT, KC_HOME)    // was: MT(MOD_LSFT, KC_BSPACE)
 
 #define RV_T3 KC_LWIN
-#define RV_T1 LCTL(KC_LSFT)    // KC_LSFT | KC_LCTL
-#define RV_YOLO LCTL(KC_LSFT)  // KC_LSFT | KC_LCTL
+#define RV_T1 MT(MOD_LSFT, KC_END)  // KC_LSFT | KC_LCTL
+#define RV_YOLO LCTL(KC_LSFT)       // KC_LSFT | KC_LCTL
 
-#define RV_TB KC_SPC
-#define RV_T5 MT(MOD_LSFT, KC_TAB)  // LM(EMOJIS, MOD_LSFT)
-#define RV_T7 LT(EMOJIS, KC_ESC)
+#define RV_TB MT(MOD_LSFT, KC_SPC)
+#define RV_T5 LT(EMOJIS, KC_TAB)
+#define RV_T7 MT(MOD_LSFT, KC_PGUP)
 
 #define RV_T6 KC_LALT
-#define RV_T8 KC_ESC
+#define RV_T8 KC_PGDN
 // MT(MOD_LSFT, KC_SPACE)
 
 #define RV_CLFT LCTL(KC_LEFT)
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______,     _______, _______, _______, KC_PSCR, _______, RESET,
         _______, KC_APP,  RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, RV_PARC, RV_CURO, RV_BRAO, _______, _______,
         _______, RV_A1,   RV_A2,   RV_ACPT, RV_QMRK, RV_BANG,     KC_SLSH, RV_PARO, RV_CURC, RV_BRAC, KC_MINS, _______,
-        _______, _______, _______, RV_C1,   RV_COLN, KC_SCLN,     RV_PLUS, KC_EQL,  KC_QUOT, KC_MINS, _______, _______,
+        _______, _______, KC_ESC,  RV_C1,   RV_COLN, KC_SCLN,     RV_PLUS, KC_EQL,  KC_QUOT, KC_MINS, _______, _______,
                           _______, _______, _______,                       KC_LCTL, KC_BSPC, KC_DEL,
                           _______, _______, _______, _______,     KC_LSFT, COLEMAK, _______, QWERTY),
 
