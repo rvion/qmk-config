@@ -98,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           RV_T1,   RV_T2,   RV_T3,   RV_T4,       RV_T5,   RV_T6,   RV_T7,   RV_T8),
 
     [_SYMBOLS] = KEYMAP(
-        _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   _______, RESET,
+        _______, _______, _______, _______, _______, _______,     _______, _______, _______, KC_PSCR, _______, RESET,
         _______, KC_APP,  RV_E1,   RV_E2,   RV_E3,   RV_E4,       _______, RV_PARC, RV_BRAO, RV_CURO, _______, _______,
         _______, RV_A1,   RV_A2,   RV_ACPT, RV_QMRK, RV_BANG,      KC_SLSH, RV_PARO, RV_BRAC, RV_CURC, KC_MINS, _______,
         _______, _______, _______, RV_C1,   _______, _______,     RV_PLUS, KC_EQL,  KC_QUOT, KC_MINS, _______, _______,
